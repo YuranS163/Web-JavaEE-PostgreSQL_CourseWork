@@ -1,0 +1,201 @@
+body {
+    background: url(https://html5book.ru/examples/buttons-4/bg.jpg)
+}
+
+main {
+    font-size: 25px;
+    background-color: blanchedalmond;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 71%;
+}
+
+.header_content {
+    text-align: center;
+    font-family: "Century Gothic", serif;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid gainsboro;
+    margin-top: 10px;
+}
+
+footer {
+    font-size: 15px;
+    background-color: lightyellow;
+}
+
+.main_block {
+    text-align: center;
+    font-family: "Century Gothic", serif;
+    width: 70%;
+    max-width: 70%;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid gainsboro;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.name_bar {
+    font-size: 30px;
+    background-color: mediumturquoise;
+}
+
+div.bar > form{
+    display: inline;
+}
+
+.bar {
+    background-color: blanchedalmond;
+}
+
+div.lightyellow > form{
+    display: inline;
+}
+
+.lightyellow {
+    background-color: lightyellow;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    padding: 8px 2px;
+    margin: 10px;
+    width: 155px;
+    max-width: 155px;
+    height: 50px;
+    max-height: 50px;
+    font-family: "Century Gothic", serif;
+    color: black;
+    background: white;
+    border: 2px solid mediumturquoise;
+    transition: .4s linear;
+}
+
+button:hover {
+    background: mediumturquoise;
+    color: white;
+}
+
+button:disabled,button[disabled] {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    padding: 8px 2px;
+    margin: 10px;
+    width: 155px;
+    max-width: 155px;
+    height: 50px;
+    max-height: 50px;
+    font-family: "Century Gothic", serif;
+    color: #949999;
+    background: #f2fffd;
+    border: 2px solid #bcd0cd;
+    transition: .4s linear;
+}
+
+#actionError {
+    width: 320px;
+    max-width: 320px;
+}
+
+.table_block {
+    width: auto;
+    height: 300px;
+    max-height: 300px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 2px solid gainsboro;
+    overflow-y: scroll;
+}
+
+table {
+    width: 100%;
+    border: 1px solid gainsboro;
+    border-collapse: collapse;
+    margin: 5px;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+}
+
+table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 3px solid gainsboro;
+    font-size: 15px;
+}
+
+table td {
+    border: 3px solid gainsboro;
+    padding: 5px;
+}
+
+.input_table[type="text"] {
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    width: 250px;
+    max-width: 250px;
+    color: black;
+    font-size: 15px;
+    font-family: inherit;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.input_table[type="email"], [type="tel"], [type="date"], [type="number"] {
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    width: 140px;
+    max-width: 140px;
+    color: black;
+    font-size: 15px;
+    font-family: inherit;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+select {
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    width: 250px;
+    max-width: 250px;
+    color: black;
+    font-size: 15px;
+    font-family: inherit;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.id_col {
+    width: 15px;
+    font-size: 15px;
+}
+
+input[type="checkbox"] {
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    color: mediumturquoise;
+}
