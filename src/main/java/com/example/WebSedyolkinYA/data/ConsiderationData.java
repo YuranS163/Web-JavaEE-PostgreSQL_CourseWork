@@ -1,13 +1,13 @@
-package com.example.WebGaneevRM.data;
+package com.example.WebSedyolkinYA.data;
 
-import com.example.WebGaneevRM.dto.ConsiderationDTO;
-import com.example.WebGaneevRM.tools.DataBaseConnection;
+import com.example.WebSedyolkinYA.dto.ConsiderationDTO;
+import com.example.WebSedyolkinYA.tools.DataBaseConnection;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.logging.Level;
 
-import static com.example.WebGaneevRM.data.RenterData.logger;
+import static com.example.WebSedyolkinYA.data.RenterData.logger;
 
 public class ConsiderationData {
 

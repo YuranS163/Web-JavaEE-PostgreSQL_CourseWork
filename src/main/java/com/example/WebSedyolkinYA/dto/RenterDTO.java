@@ -1,4 +1,4 @@
-package com.example.WebGaneevRM.dto;
+package com.example.WebSedyolkinYA.dto;
 
 public class RenterDTO {
     private int id_renter;

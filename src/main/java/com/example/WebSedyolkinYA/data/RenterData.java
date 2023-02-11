@@ -1,7 +1,7 @@
-package com.example.WebGaneevRM.data;
+package com.example.WebSedyolkinYA.data;
 
-import com.example.WebGaneevRM.tools.DataBaseConnection;
-import com.example.WebGaneevRM.dto.RenterDTO;
+import com.example.WebSedyolkinYA.tools.DataBaseConnection;
+import com.example.WebSedyolkinYA.dto.RenterDTO;
 
 import java.sql.*;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-<%@ page import="com.example.WebGaneevRM.data.RenterData" %>
+<%@ page import="com.example.WebSedyolkinYA.data.RenterData" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -19,9 +19,9 @@
         </form>
     </main>
     <footer class="main_block">
-        Разработчик: Ганеев Рустам
+        Разработчик: Седёлкин Юрий
         <br>
-        ganeevrm@yahoo.com
+        yurasedyolkin@gmail.com
     </footer>
     </body>
 </html>

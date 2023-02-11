@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="com.example.WebGaneevRM.data.GameData" %>
-<%@ page import="com.example.WebGaneevRM.dto.GameDTO" %>
+<%@ page import="com.example.WebSedyolkinYA.data.GameData" %>
+<%@ page import="com.example.WebSedyolkinYA.dto.GameDTO" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
@@ -101,9 +101,9 @@
     </c:if>
 </main>
 <footer class="main_block">
-    Разработчик: Ганеев Рустам
+    Разработчик: Седёлкин Юрий
     <br>
-    ganeevrm@yahoo.com
+    yurasedyolkin@gmail.com
 </footer>
 <script src="js/main.js"></script>
 </body>

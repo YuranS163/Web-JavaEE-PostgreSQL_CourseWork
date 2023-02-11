@@ -1,22 +1,23 @@
-package com.example.WebGaneevRM.servlets;
+package com.example.WebSedyolkinYA.servlets;
 
-import com.example.WebGaneevRM.data.RenterData;
+import com.example.WebSedyolkinYA.data.ContractData;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.logging.Level;
 
-import static com.example.WebGaneevRM.data.RenterData.logger;
+import static com.example.WebSedyolkinYA.data.RenterData.logger;
 
-@WebServlet(name = "RenterServlet", value = "/RenterServlet")
-public class RenterServlet extends HttpServlet {
+@WebServlet(name = "ContractServlet", value = "/ContractServlet")
+public class ContractServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("renters", RenterData.selectRenter());
-        getServletContext().getRequestDispatcher("/RenterJsp.jsp").forward(request, response);
+        request.setAttribute("contracts", ContractData.selectContract());
+        getServletContext().getRequestDispatcher("/ContractJsp.jsp").forward(request, response);
     }
 
     @Override
@@ -25,15 +26,14 @@ public class RenterServlet extends HttpServlet {
         switch (request.getParameter("action")) {
             case "ok":
                 try {
-                    RenterData.addRenter(request.getParameter("nameOk"), request.getParameter("phoneOk"), request.getParameter("emailOk"));
-                    logger.info("Новая запись добавлена");
+                    ContractData.addContract(Integer.parseInt(request.getParameter("renterOk")), Integer.parseInt(request.getParameter("landlordOk")), Integer.parseInt(request.getParameter("gameOk")), Date.valueOf(request.getParameter("dateOk")), Date.valueOf(request.getParameter("timeLineOk")), Float.parseFloat(request.getParameter("amountOk")));
                 } catch (SQLException e) {
                     logger.log(Level.WARNING,"Ошибка SQL при добавлении записи", e);
                 } catch (Exception exception) {
                     logger.log(Level.WARNING,"Ошибка при добавлении записи", exception);
                 }
-                request.setAttribute("renters", RenterData.selectRenter());
-                getServletContext().getRequestDispatcher("/RenterJsp.jsp").forward(request, response);
+                request.setAttribute("contracts", ContractData.selectContract());
+                getServletContext().getRequestDispatcher("/ContractJsp.jsp").forward(request, response);
                 break;
             case "delete": {
                 String[] listCounter = request.getParameterValues("listCounter");
@@ -41,7 +41,7 @@ public class RenterServlet extends HttpServlet {
                 for (String counter : listCounter) {
                     int counterForMass = Integer.parseInt(counter);
                     try {
-                        RenterData.deleteRenter(Integer.parseInt(listId[counterForMass]));
+                        ContractData.deleteContract(Integer.parseInt(listId[counterForMass]));
                         logger.info("Запись №" + counter + " удалена");
                     } catch (SQLException e) {
                         if (e.getSQLState().equals("23503")) {
@@ -56,21 +56,24 @@ public class RenterServlet extends HttpServlet {
                         break;
                     }
                 }
-                request.setAttribute("renters", RenterData.selectRenter());
-                getServletContext().getRequestDispatcher("/RenterJsp.jsp").forward(request, response);
+                request.setAttribute("contracts", ContractData.selectContract());
+                getServletContext().getRequestDispatcher("/ContractJsp.jsp").forward(request, response);
                 break;
             }
             case "edit": {
                 String[] listId = request.getParameterValues("listId");
                 String[] listCounter = request.getParameterValues("listCounter");
-                String[] listName = request.getParameterValues("listName");
-                String[] listPhone = request.getParameterValues("listPhone");
-                String[] listEmail = request.getParameterValues("listEmail");
+                String[] listRenter = request.getParameterValues("listRenter");
+                String[] listLandlord = request.getParameterValues("listLandlord");
+                String[] listGame = request.getParameterValues("listGame");
+                String[] listDate = request.getParameterValues("listDate");
+                String[] listTimeLine = request.getParameterValues("listTimeLine");
+                String[] listAmount = request.getParameterValues("listAmount");
 
                 for (String counter : listCounter) {
                     try {
                         int counterForMass = Integer.parseInt(counter);
-                        RenterData.editRenter(Integer.parseInt(listId[counterForMass]), listName[counterForMass], listPhone[counterForMass], listEmail[counterForMass]);
+                        ContractData.editContract(Integer.parseInt(listId[counterForMass]), Integer.parseInt(listRenter[counterForMass]), Integer.parseInt(listLandlord[counterForMass]), Integer.parseInt(listGame[counterForMass]), Date.valueOf(listDate[counterForMass]), Date.valueOf(listTimeLine[counterForMass]), Float.parseFloat(listAmount[counterForMass]));
                         logger.info("Запись №" + counter + " отредактирована");
                     } catch (SQLException e) {
                         logger.log(Level.WARNING,"Ошибка SQL при редактировании записи", e);
@@ -80,13 +83,13 @@ public class RenterServlet extends HttpServlet {
                         break;
                     }
                 }
-                request.setAttribute("renters", RenterData.selectRenter());
-                getServletContext().getRequestDispatcher("/RenterJsp.jsp").forward(request, response);
+                request.setAttribute("contracts", ContractData.selectContract());
+                getServletContext().getRequestDispatcher("/ContractJsp.jsp").forward(request, response);
                 break;
             }
             default:
-                request.setAttribute("renters", RenterData.selectRenter());
-                getServletContext().getRequestDispatcher("/RenterJsp.jsp").forward(request, response);
+                request.setAttribute("contracts", ContractData.selectContract());
+                getServletContext().getRequestDispatcher("/ContractJsp.jsp").forward(request, response);
                 break;
         }
     }
